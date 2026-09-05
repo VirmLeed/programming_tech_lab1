@@ -16,7 +16,7 @@ class YamlDataReader(DataReader):
                     self.students[name] = []
                     for subject, score in scores.items():
                         self.students[name].append((subject, score))
-            except:
+            except AttributeError:
                 raise ValueError("Invalid input file for YamlDataReader")
 
         return self.students
